@@ -23,10 +23,9 @@ section {
   margin-bottom: 10px;
 }
 
-.counter {
+.counterNums {
   float: right;
   color: black;
 }
  .tooManyCharacters {
   color: red;
-}
