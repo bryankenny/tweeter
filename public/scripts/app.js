@@ -5,9 +5,10 @@
 // use .attr to get the value of an attribute for the first element in the set of matched elements
 // use .append to append each relavent html element and its children to $newTweet
 
+
+
 function createTweetElement(tweet) {
 
-   console.dir(tweet);
 
   let $newTweet = $("<article></article>").addClass("tweet-container");
 
@@ -53,3 +54,17 @@ function renderTweets(tweetList) {
   }
 }
 
+
+$(document).ready( function() {
+  console.log("IS THIS WORKING?!");
+   $.ajax( {                            // makes a GET request to /tweets
+    url: '/tweets',                     // success: function passes in the object
+    method: 'GET',                        //
+    success: function(obj) {
+      console.log("success", obj)
+      renderTweets(obj);
+    }
+  });
+});
+
+// https://www.youtube.com/watch?v=fEYx8dQr_cQ
