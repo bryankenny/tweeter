@@ -2,17 +2,17 @@ tweet-list {
   margin: 1em;
 }
 
- .tweet-list article.tweet-container {
+ article.tweet-container {
   background-color: #e0e0ff;
   border-radius: 10px;
 }
- .highlight {
+ article.highlight {
   border-color: black;
   border-style: solid;
   border-width: 1px;
 }
 
- .tweet-list article.tweet-container header {
+ article.tweet-container header {
   background-color: #ffff00;
   border-radius: 10px 10px 0 0;
   font-family: 'Futura';
@@ -20,7 +20,7 @@ tweet-list {
   line-height: 80px;
   padding: 0 1em;
 }
- .tweet-list article.tweet-container img {
+ article.tweet-container img {
   width: 64px;
   height: 64px;
   float: left;
@@ -37,15 +37,16 @@ tweet-list {
   float: right;
 }
 
- .tweet-list article.tweet-container footer {
+ article.tweet-container footer {
   height: 40px;
   line-height: 40px;
   padding: 0 1em;
   border-top: 2px;
   border-top-style: solid;
   border-color: #c0c0c0;
+  float: right;
 }
- .tweet-list article.tweet-container footer p {
+ article.tweet-container footer p {
   float: left;
 }
  .iconset {
