@@ -5,7 +5,7 @@
     const charsRemaining = maxCharacterAmount - $(this).val().length;
     let counterNums = $(this).closest(".new-tweet").find(".counter");
 
-    counterNums.text(charsRemaining);
+      counterNums.text(charsRemaining);
 
     if (charsRemaining < 0) {
       counterNums.addClass("tooManyCharacters")
