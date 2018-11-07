@@ -1,65 +1,98 @@
-tweet-list {
-  margin: 1em;
-}
+ /* tweet-list.css */
+ html {
+   box-sizing: border-box;
+ }
+ *, *:before, *:after {
+   box-sizing: inherit;
+ }
+ /* The list of tweets itself */
+
+ .tweet-list {
+   margin: 1em;
+ }
+
+ /* An individual tweet */
 
  article.tweet-container {
-  background-color: #e0e0ff;
-  border-radius: 10px;
-}
+   background-color: #ffff00;
+   border-color: rgba(0, 0, 0, 0);
+   border-style: solid;
+   border-radius: 10px;
+   border-width: 1px;
+ }
+
  article.highlight {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-}
+   border-color: black;
+ }
+
+ /* Tweet header */
 
  article.tweet-container header {
-  background-color: #ffff00;
-  border-radius: 10px 10px 0 0;
-  font-family: 'Futura';
-  height: 80px;
-  line-height: 80px;
-  padding: 0 1em;
-}
- article.tweet-container img {
-  width: 64px;
-  height: 64px;
-  float: left;
-  margin: 0 6px 0 0;
-  border-radius: 6px;
-  background-color: rgba(255, 0, 0, 0.2);
-}
- .tweet-list .username {
-  font-size: 20px;
-  float: left;
-}
- .tweet-list .handle {
-  font-size: 14px;
-  float: right;
-}
+   background-color: #8080c0;
+   border-radius: 10px 10px 0 0;
+   font-family: 'Futura';
+   height: 80px;
+   display: flex;
+   align-items: center;
+   padding: 0 1em;
+ }
+
+ img.avatar {
+   width: 64px;
+   height: auto;
+   margin: 0 6px 0 0;
+   border-radius: 6px;
+   background-color: rgba(0, 0, 0, 0.25);
+ }
+
+ .username {
+   font-size: 20px;
+   flex-grow: 1;
+ }
+
+ .handle {
+   font-size: 14px;
+ }
+
+ /* Tweet footer */
 
  article.tweet-container footer {
-  height: 70px;
-  line-height: 40px;
-  padding: 0 1em;
-  border-top: 2px;
-  border-top-style: solid;
-  border-color: #c0c0c0;
-}
- article.tweet-container footer p {
-  float: left;
-}
- .iconset {
-  display: none;
-  float: right;
-}
+   height: 70px;
+   display: flex;
+   align-items: center;
+   padding: 0 1em;
+   border-top: 2px;
+   border-top-style: solid;
+   border-color: #c0c0c0;
 
- .tweet-list .tweet-body {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  padding: 0 1em;
-  background-color: #ffff00;
+ }
+
+ article.tweet-container footer p {
+   float: left;
+   flex-grow: 1;
+ }
+
+ .iconset {
+   display: none;
 }
- .tweet-lists .tweet-body p {
-  margin: 0;
+ .iconset img {
+  margin: 0 1px;
+  height: 50px;
 }
+ /* Tweet body */
+
+ .tweet-body {
+   height: 120px;
+   display: flex;
+   align-items: center;
+   padding: 0 1em;
+ }
+
+ .tweet-body p {
+   margin: 0;
+ }
+
+ .hashtag {
+   font-style: oblique;
+   color: #d040ff;
+ }

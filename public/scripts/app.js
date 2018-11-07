@@ -1,79 +1,41 @@
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-      },
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-        "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-      },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Johann von Goethe",
-      "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-        "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-      },
-      "handle": "@johann49"
-    },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368
-  }
-];
-
-function renderTweets(tweetsList) {
-   for (var i = 0; i < tweetList.length; i++) {
-    return renderTweets;
-   }
-}
-
 // use renderTweets function to loop through tweets in the data object and return/render them as we go through
 // use .append to append the addeed class, added with .addClass, to the html element specified as a paramter to .append
-//
+// I found the logic for the time counter from stack overflow and changed it to be applicable to this program
+// take out the values we used to hardcode the weet from befor andreplace it with the information from within the tweetData database
+// use .attr to get the value of an attribute for the first element in the set of matched elements
+// use .append to append each relavent html element and its children to $newTweet
 
+function createTweetElement(tweet) {
 
-function createTweetElement() {
+   console.dir(tweet);
 
   let $newTweet = $("<article></article>").addClass("tweet-container");
 
   let $header = $("<header></header>");
     $newTweet.append($header);
-    $header.append($("<img/>").addClass("avatar").attr("src", "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg"));
-    $header.append($("<span></span>").addClass("username").text("BK KILLA"));
-    $header.append($("<span></span>").addClass("handle").text("@bryguy"));
+      $header.append($("<img/>").addClass("avatar").attr( "src", tweet["user"]["avatars"]["large"] ));
+      $header.append($("<span></span>").addClass("username").text(tweet["user"]["name"]));
+      $header.append($("<span></span>").addClass("handle").text(tweet["user"]["handle"]));
 
   let $tweetBody = $("<div></div>").addClass("tweet-body");
     $newTweet.append($tweetBody);
-    $tweetBody.append($("<p></p>").text("Bryan kenny is a verycool guy, all the example tweets say so"));
+      $tweetBody.append($("<p></p>").text(tweet["content"]["text"]));
 
   let $footer = $("<footer></footer");
     $newTweet.append($footer);
-    $footer.append($("<p></p>").text("1000000000 years ago"));
 
+  let currentTime = new Date(Date.now());
+  let timeAgo = Math.floor((currentTime - tweet["created_at"]) / 1000);
+
+   if (timeAgo > (3600 * 24)) {
+    $footer.append($("<p></p>").text(Math.floor(timeAgo/3600/24) + " days ago"));
+  } else if (timeAgo > 3600) {
+    $footer.append($("<p></p>").text(Math.floor(timeAgo/3600) + " hours ago"));
+  } else if (timeAgo > 60) {
+    $footer.append($("<p></p>").text(Math.floor(timeAgo/60) + " minutes ago"));
+  } else {
+    $footer.append($("<p></p>").text(timeAgo + " seconds ago"));
+  }
 
   let $iconset = $("<span></span>").addClass("iconset")
     $footer.append($iconset);
@@ -82,9 +44,12 @@ function createTweetElement() {
     $iconset.append($("<img/>").attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-h4ZR9l3cqG7dfrKqR1mpV1e-vImi3ggtpOAmFOgYKAIYOODhdA"));
 
 
-
-
-  $('.tweet-list').append($newTweet);
+  return $newTweet;
 }
- createTweetElement();
+
+function renderTweets(tweetList) {
+  for (var i = 0; i < tweetList.length; i++) {
+     $('.tweet-list').append(createTweetElement(tweetList[i]));
+  }
+}
 
