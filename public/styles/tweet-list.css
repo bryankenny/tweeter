@@ -38,13 +38,12 @@ tweet-list {
 }
 
  article.tweet-container footer {
-  height: 40px;
+  height: 70px;
   line-height: 40px;
   padding: 0 1em;
   border-top: 2px;
   border-top-style: solid;
   border-color: #c0c0c0;
-  float: right;
 }
  article.tweet-container footer p {
   float: left;
