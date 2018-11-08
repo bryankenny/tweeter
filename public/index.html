@@ -30,12 +30,17 @@
 
   </head>
 
-  <body>
+  <body OnLoad="document.myform.text.focus();">>
      <!-- Top nav bar (fixed) -->
      <nav id="nav-bar">
        <img class="logo" src="/images/bird.png">
        <span class="header">Tweeter</span>
-          <button class="compose">Hide Compose Tweet</button>
+          <button name="myform" class="compose">Tweet Toggle</button>
+          <script type="text/javascript" language="JavaScript">
+document.forms['button'].elements['textarea'].focus();
+</script>
+
+
      </nav>
 
      <!-- Page-specific (main) content here -->
@@ -45,7 +50,7 @@
 
          <h2>Compose Tweet</h2>
 
-         <form action="/tweets/" method="post">
+         <form name="myform2 "action="/tweets/" method="post">
            <textarea name="text" placeholder="What are you humming about?"></textarea>
            <input type="submit" value="Tweet">
            <span class="counter">140</span>
@@ -56,6 +61,5 @@
       </section>
 
      </main>
-
    </body>
  </html>
