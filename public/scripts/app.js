@@ -64,8 +64,8 @@ function renderTweets(tweetList) {
     $('.tweet-list').append(createTweetElement(tweetList[i]));
   }
 }
+
  $(document).ready( function() {
-  console.log("app.js is ready.");
    $.ajax( {
     url: '/tweets',                          // makes a GET request to /tweets
     method: 'GET',                           // success: function passes in the object to cb

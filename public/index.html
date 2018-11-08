@@ -30,17 +30,12 @@
 
   </head>
 
-  <body OnLoad="document.myform.text.focus();">>
+  <body>
      <!-- Top nav bar (fixed) -->
      <nav id="nav-bar">
        <img class="logo" src="/images/bird.png">
        <span class="header">Tweeter</span>
-          <button name="myform" class="compose">Tweet Toggle</button>
-          <script type="text/javascript" language="JavaScript">
-document.forms['button'].elements['textarea'].focus();
-</script>
-
-
+          <button class="compose">Tweet Toggle</button>
      </nav>
 
      <!-- Page-specific (main) content here -->
@@ -50,10 +45,11 @@ document.forms['button'].elements['textarea'].focus();
 
          <h2>Compose Tweet</h2>
 
-         <form name="myform2 "action="/tweets/" method="post">
-           <textarea name="text" placeholder="What are you humming about?"></textarea>
+         <form name="myform "action="/tweets/" method="post">
+           <textarea class="text-area" name="text" placeholder="What are you humming about?"></textarea>
            <input type="submit" value="Tweet">
            <span class="counter">140</span>
+           <span class = "userTweetForm"> </span>. <!--span is an HTML tag like div, mostly used for styling by ID or class  -->
          </form>
        </section>
       <section class="tweet-list">
