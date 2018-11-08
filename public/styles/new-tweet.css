@@ -23,6 +23,13 @@ section {
   margin-bottom: 10px;
 }
 
+.form-error {
+  color: red;
+}
+ .form-ok {
+  color: green;
+}
+
 .tooManyCharacters {
   color: red;
 }
