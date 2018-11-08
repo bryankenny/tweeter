@@ -10,8 +10,6 @@
   $('.new-tweet').on('submit', 'form', function(event) {
     event.preventDefault();
     let userTweet = $(this).find('textarea').val();
-     $(this).find('textarea').val("");
-    $(this).find('textarea').trigger('input');
 
 // above we are defining userTweet as the value of what is being submitted into the new-tweet text-area box
 // above that we are calling the slideToggle function on the form with the .compose class when it is clicked
@@ -25,8 +23,6 @@
          return;
       }
 
-  $(this).find('textarea').val("");
-  $(this).find('textarea').trigger('input');
   $(this).find('.userTweetForm').text("Tweet'd!").addClass("working-form");
 
 //in the event of too many characters or an empty text field we will change the html elements class so we can appropriately style it to make the error clear
@@ -46,6 +42,8 @@
         });
       }
     });
+    $(this).find('textarea').val("");
+    $(this).find('textarea').trigger('input');
   });
  });
 
