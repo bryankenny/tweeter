@@ -42,7 +42,7 @@
         });
       }
     });
-    $(this).find('textarea').val("");
+    $(this).find('textarea').val("").removeClass("error-form");
     $(this).find('textarea').trigger('input');
   });
  });
