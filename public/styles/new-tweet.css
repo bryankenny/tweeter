@@ -38,4 +38,15 @@ section {
   color: black;
 }
 
+.tweetButton {
 
+}
+
+#charCount {
+  float: right;
+}
+
+.tweet-list {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

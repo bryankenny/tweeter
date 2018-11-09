@@ -1,7 +1,7 @@
 nav {
   color: #e8fdff;
   background-color: #00a087;
-  height: 80px;
+  height: 92px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -25,4 +25,9 @@ img {
   float: left;
   line-height: 80px;
   font-size: 40px;
+}
+
+.compose {
+  bottom: 50px;
+  font-family: cursive;
 }
