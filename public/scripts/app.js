@@ -70,7 +70,6 @@ function renderTweets(tweetList) {
     url: '/tweets',                          // makes a GET request to /tweets
     method: 'GET',                           // success: function passes in the object to cb
     success: function(obj) {                 // then we call render tweets to render the passedin object(tweet)
-      console.log(obj);
       renderTweets(obj);
     }
   });

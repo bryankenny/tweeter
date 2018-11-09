@@ -1,27 +1,22 @@
+// saveTweet was modified to use insertOne so that new tweets are logged into the mongo database
+// took away async delay simulation because mongo does real async
+// using .find() to get tweets upon submission
+
 "use strict";
 
-// Simulates the kind of delay we see with network or filesystem operations
-const simulateDelay = require("./util/simulate-delay");
-
-// Defines helper functions for saving and getting tweets, using the database `db`
-module.exports = function makeDataHelpers(db) {
+module.exports = function makeDataHelpers(db, collection) {
   return {
 
-    // Saves a tweet to `db`
+    // Saves a tweet to the given db and collection
     saveTweet: function(newTweet, callback) {
-      simulateDelay(() => {
-        db.tweets.push(newTweet);
-        callback(null, true);
-      });
+
+      db.collection(collection).insertOne(newTweet, callback);
     },
-
-    // Get all tweets in `db`, sorted by newest first
+     // Get all tweets in `db`, sorted by newest first
     getTweets: function(callback) {
-      simulateDelay(() => {
-        const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-        callback(null, db.tweets.sort(sortNewestFirst));
-      });
-    }
 
-  };
-}
+      db.collection(collection).find().sort("created_at", 1).toArray(callback);
+    }
+   };
+};
+

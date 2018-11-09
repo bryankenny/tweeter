@@ -1,5 +1,4 @@
  console.log("I am submit-tweet.js");
- console.log(this);
 
   $(document).ready( function() {
   $('#nav-bar').on('click', '.compose', function() {
