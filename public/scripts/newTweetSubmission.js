@@ -1,5 +1,4 @@
  console.log("I am submit-tweet.js");
- console.log(this);
 
   $(document).ready( function() {
   $('#nav-bar').on('click', '.compose', function() {
@@ -42,7 +41,7 @@
         });
       }
     });
-    $(this).find('textarea').val("");
+    $(this).find('textarea').val("").removeClass("error-form");
     $(this).find('textarea').trigger('input');
   });
  });
