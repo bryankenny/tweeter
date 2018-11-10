@@ -1,13 +1,11 @@
 $(document).ready (function() {
   $(".tweet-list").on("mouseover", ".tweet-container", function(event) {
   $(this).addClass("highlight");
-    console.log(this);
   $(this).find(".iconset").show();
     event.stopPropagation();
    });
 
     $(".tweet-list").on("mouseleave", ".tweet-container", function(event) {
-     console.log("bye mouse");
     $(this).removeClass("highlight");
     $(this).find(".iconset").hide();
       event.stopPropagation();

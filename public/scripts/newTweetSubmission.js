@@ -1,5 +1,3 @@
- console.log("I am submit-tweet.js");
-
   $(document).ready( function() {
   $('#nav-bar').on('click', '.compose', function() {
   $('.new-tweet').slideToggle();
