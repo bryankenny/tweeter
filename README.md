@@ -19,4 +19,12 @@ This repository is the starter code for the project: Students will fork and clon
 - Body-Parser
 - MD5
 
+## Screenshots
 
+!["Screenshot of empty tweet"](https://github.com/bryankenny/tweeter/blob/master/docs/Empty%20Tweet.png?raw=true)
+
+!["Screenshot of highlighted tweet container with icons"](https://github.com/bryankenny/tweeter/blob/master/docs/Hightlighted%20With%20Icons.png?raw=true)
+
+!["Screenshot of toggled text box"](https://github.com/bryankenny/tweeter/blob/master/docs/Toggled%20Text%20Box.png?raw=true)
+
+!["Screenshot of successfully tweet'd tweet"](https://github.com/bryankenny/tweeter/blob/master/docs/Tweet'd.png?raw=true)
