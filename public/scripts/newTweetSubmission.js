@@ -55,4 +55,4 @@
  // the .ajax logic is uded to perform an asynchronous http request, so we can do things like have new elements load on a page without it reloading
  // The .serialize() method creates a text string in standard URL-encoded notation. It can act on a jQuery object that has selected individual form controls. its purpose here is to save the state of an object so it can be recreated when needed.
  // In this case we are serializing the json data that is being referenced iby this, which is the array of tweet objects found at /tweets
- //ewe
+ //

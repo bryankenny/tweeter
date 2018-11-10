@@ -8,7 +8,7 @@
  /* The list of tweets itself */
 
  .tweet-list {
-   margin: 1em;
+   margin: 1em;       /*  em is relative to parents font size  */
  }
 
  /* An individual tweet */
